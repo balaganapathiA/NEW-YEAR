@@ -23,9 +23,17 @@
 <script>
   var name=prompt("ENTER YOUR NAME");
   document.getElementById("name").innerHTML = name.toUpperCase();
+  var mySound = new sound("firework1.mp3");
+  var sound2= new sound("newyear.mp3")
+  
 
       window.onload=()=>{
+        mySound.play();
+        sound2.play();
+        
     const container = document.querySelector('.bg')
+    myMusic = new sound("new");
+    myMusic.play();
     const fireworks = new Fireworks.default(container, {
   autoresize: true,
   opacity: 0.5,
@@ -76,5 +84,25 @@
 })
 fireworks.start();
     }
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+mySound.play();
+
+
+
 </script>
 </html>
