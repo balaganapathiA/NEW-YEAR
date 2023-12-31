@@ -1,0 +1,116 @@
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+      'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1;
+    user-select: none;
+    background-color: #000;
+    overscroll-behavior: none;
+    overflow: hidden;
+    width: auto;
+  }
+  .name{
+   
+    font-size: larger;
+    font-weight: bolder;
+    background: linear-gradient(#d60909 10%, #dfc906 20%,#d60909 10%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine1 3s infinite ease-in-out;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 37%;
+    text-align: center;
+    margin: -120px 0 0 -120px;
+    padding: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    z-index: 1;
+    opacity: 0.9;
+    line-height: initial;
+  }
+  .creator{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      font-weight: 600;
+      padding: 12px 48px;
+      color: #fff;
+  }
+  .btn-shine{
+    font-size: 200px;
+  }
+    .btn-shine {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 12px 48px;
+      color: #fff;
+      background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%);
+      background-position: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      animation-fill-mode: forwards;
+      -webkit-text-size-adjust: none;
+      font-weight: 600;
+      font-size: 40px;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+    }
+    @keyframes shine {
+      0% {
+        background-position: 0;
+      }
+      60% {
+        background-position: 180px;
+      }
+      100% {
+        background-position: 380px;
+      }
+    }
+
+    @keyframes shine1 {
+      0% {
+        background-position: 0;
+      }
+      60% {
+        background-position: 180px;
+      }
+      100% {
+        background-position: 280px;
+      }
+    }
+  
+    @media all and (max-width:520px){
+      .btn-shine{
+      font-size: 25px;
+      }
+      .name{
+        font-size: 20px;
+      }
+      .container {
+        position: fixed;
+        top: 50%;
+        left: 31%;
+      }
+      .creator{
+        position: fixed;
+        bottom: 0;
+        right: -1;
+      }
+
+    }
