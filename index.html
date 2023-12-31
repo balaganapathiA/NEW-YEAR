@@ -13,7 +13,13 @@
     <audio controls autoplay style="display: none; >
   <source src="newyear.mp3" type="audio/ogg">
     </audio>
-    
+    <audio controls id="autoplay">
+  <source src="newyear.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+ <script>
+var myaudio = document.getElementById("autoplay").autoplay = true;
+ </script>
     <a href="https://www.instagram.com/_bala_07_/" class="creator"><i class="fa fa-instagram" style="font-size:28px;color:red"></i>_bala_07</a>
     <div class="container">
         <div>🎆</div>
