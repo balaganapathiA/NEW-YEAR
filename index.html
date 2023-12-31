@@ -10,8 +10,8 @@
     <title>HAPPY NEW YEAR</title>
 </head>
 <body>
-  <audio controls id="autoplay">
-  <source src="newyear.mp3" type="audio/mpeg">
+  <audio hidden id="autoplay">
+  <source src="fireworks.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
  
@@ -27,17 +27,11 @@
     
 </body>
 <script>
-    
-  var myaudio = document.getElementById("autoplay").autoplay = true;
-  var name=prompt("ENTER YOUR NAME");
+ var name=prompt("ENTER YOUR NAME");
   document.getElementById("name").innerHTML = name.toUpperCase();
-  var mySound = new sound("firework1.mp3");
-  var sound2= new sound("newyear.mp3")
-  
+var myaudio = document.getElementById("autoplay").autoplay = true;
 
       window.onload=()=>{
-       
-        
     const container = document.querySelector('.bg')
     const fireworks = new Fireworks.default(container, {
   autoresize: true,
@@ -89,22 +83,6 @@
 })
 fireworks.start();
     }
-
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}
 
 
 
