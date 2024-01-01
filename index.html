@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="firework.css">
+    
+    
     <title>HAPPY NEW YEAR</title>
 </head>
 <body>
-  <audio hidden id="autoplay">
-  <source src="newyear.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
- 
+  <div class="wrapper">
+    <audio id="autoplay"src="newyear.mp3" autoplay="true" type="audio/mpeg" unmuted>
+    Your browser does not support the audio element.
+    </audio>
+  </div>
     <a href="https://www.instagram.com/_bala_07_/" class="creator"><i class="fa fa-instagram" style="font-size:28px;color:red"></i>_bala_07</a>
     <div class="container">
         <div>🎆</div>
@@ -27,12 +29,29 @@
     
 </body>
 <script>
+      
+  
     
  var name=prompt("ENTER YOUR NAME");
   document.getElementById("name").innerHTML = name.toUpperCase();
+  window.onload = setInterval(GameLoop, 1000 / 10); //10fps
 
+  let myAudio = new Audio();
+
+  myAudio.src = 'newyear.mp3';
+
+  function GameLoop() {
+    myAudio.autoplay=true;
+    myAudio.play();
+    if (myAudio.paused == true) {
+        myAudio.play();
+    }
+  }
+
+    
       window.onload=()=>{
     const container = document.querySelector('.bg')
+    GameLoop();
     const fireworks = new Fireworks.default(container, {
   autoresize: true,
   opacity: 0.5,
@@ -82,10 +101,8 @@
   }
 })
 fireworks.start();
-    }
 
-
-
-
+      }
+  
 </script>
 </html>
